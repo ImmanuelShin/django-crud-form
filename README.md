@@ -1,4 +1,4 @@
-# Lab - Class 27 
+# Lab - Class 28
 
 ## Project: Django CRUD and Forms
 
