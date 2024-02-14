@@ -4,6 +4,8 @@
 
 ### Author: [Immanuel Shin](https://github.com/ImmanuelShin)
 
+A small web application demonstrating CRUD and Form capabilities in Django. Styled with Tailwind CSS.
+
 ### Setup
 
 #### Requirements
