@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Update Snack - {{ snack.title }}{% endblock %}
+
+{% block header %}Update Snack{% endblock %}
+
+{% block content %}
+<section class="container mx-auto mt-8">
+    <div class="max-w-md mx-auto p-6 bg-white border border-gray-200 rounded-lg shadow-md">
+        <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Update {{ snack.title }}</h2>
+        <form method="POST" class="space-y-4">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="bg-blue-500 text-white hover:bg-blue-600 py-2 px-4 rounded">
+                Save
+            </button>
+        </form>
+    </div>
+</section>
+{% endblock content %}

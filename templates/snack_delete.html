@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Snack - {{ snack.title }}{% endblock %}
+
+{% block header %}Delete Snack{% endblock %}
+
+{% block content %}
+<section class="container mx-auto mt-8">
+    <div class="max-w-md mx-auto p-6 bg-white border border-gray-200 rounded-lg shadow-md">
+        <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Delete {{ snack.title }}</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <p>Do you really want to delete "{{ snack.title }}"?</p>
+            <button class="bg-red-500 text-white hover:bg-red-600 py-2 px-4 rounded">
+                OK
+            </button>
+        </form>
+    </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Snack List - My Snack App{% endblock %}
+
+{% block header %}Snack List{% endblock %}
+
+{% block content %}
+    <section class="container mx-auto mt-8">
+        <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {% for snack in snacks %}
+                <li class="bg-gray-600 border border-gray-500 rounded-lg shadow-md p-4 transition duration-300 ease-in-out transform hover:scale-105" onclick="window.location='{% url 'snack_detail' pk=snack.pk %}'" style="cursor: pointer;">
+                    <div class="text-gray-900 dark:text-white font-semibold text-lg mb-2">{{ snack.title }}</div>
+                    <p class="text-gray-800 dark:text-gray-300">{{ snack.description }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

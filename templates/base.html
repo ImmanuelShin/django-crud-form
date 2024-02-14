@@ -1,0 +1,48 @@
+{% load compress %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Snack App{% endblock %}</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+      }
+
+      main {
+          flex: 1;
+      }
+  </style>
+</head>
+<body class="bg-gray-800">
+  <header class="bg-blue-500 p-4">
+      <nav class="container mx-auto flex justify-between items-center">
+          <h1 class="text-white text-2xl font-bold">{% block header %}My Snack App{% endblock %}</h1>
+          <ul class="flex space-x-4">
+              <li><a href="{% url 'snack_list' %}" class="text-white">Snack List</a></li>
+              <li><a href="{% url 'snack_create' %}" class="text-white">Create Snack</a></li>
+          </ul>
+          <div>
+            <!--Dummy div for now-->
+          </div>
+      </nav>
+  </header>
+
+  <main class="container mx-auto mt-4 max-w-screen-md">
+      {% block content %}{% endblock %}
+  </main>
+
+  <footer class="mt-8 text-center text-white">
+      <p>&copy; 2024 My Snack App</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>
+</body>
+</html>
